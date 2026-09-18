@@ -1,7 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080706">
@@ -9,7 +10,10 @@
 <title>A Little Something</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
+/* =========================================================
+   ROOT
+========================================================= */
 
 :root{
     --black:#080706;
@@ -20,6 +24,10 @@
     --muted:#9a9489;
     --line:rgba(201,169,110,.25);
 }
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -39,9 +47,9 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
+/* =========================================================
    BACKGROUND
-========================= */
+========================================================= */
 
 .background{
     position:fixed;
@@ -78,15 +86,24 @@ body{
     position:absolute;
     inset:0;
     opacity:.18;
+
     background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
     background-size:60px 60px;
 }
 
-/* =========================
+/* =========================================================
    GOLD DUST
-========================= */
+========================================================= */
 
 .dust{
     position:fixed;
@@ -100,6 +117,7 @@ body{
 }
 
 @keyframes rise{
+
     from{
         transform:translateY(110vh);
         opacity:0;
@@ -117,26 +135,32 @@ body{
         transform:translateY(-10vh);
         opacity:0;
     }
+
 }
 
-/* =========================
+/* =========================================================
    MAIN
-========================= */
+========================================================= */
 
 main{
     min-height:100vh;
     width:100%;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     padding:40px 20px;
 }
 
 .screen{
     width:100%;
     max-width:900px;
+
     display:none;
+
     text-align:center;
+
     animation:appear .8s ease forwards;
 }
 
@@ -145,6 +169,7 @@ main{
 }
 
 @keyframes appear{
+
     from{
         opacity:0;
         transform:translateY(25px);
@@ -154,11 +179,12 @@ main{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
-/* =========================
+/* =========================================================
    COMMON
-========================= */
+========================================================= */
 
 .eyebrow{
     font-size:10px;
@@ -203,14 +229,15 @@ h2{
 .description{
     max-width:600px;
     margin:28px auto 38px;
+
     color:var(--muted);
     font-size:15px;
     line-height:1.9;
 }
 
-/* =========================
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .buttons{
     display:flex;
@@ -223,61 +250,84 @@ h2{
 button{
     font-family:"DM Sans",sans-serif;
     cursor:pointer;
-    transition:.3s ease;
+    transition:
+        transform .35s ease,
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
 .btn-main{
     background:var(--gold);
     color:#100d08;
+
     border:1px solid var(--gold);
+
     padding:15px 27px;
+
     border-radius:3px;
+
     font-weight:700;
     letter-spacing:.4px;
 }
 
 .btn-main:hover{
     background:var(--gold-light);
+
     transform:translateY(-3px);
-    box-shadow:0 15px 40px rgba(201,169,110,.15);
+
+    box-shadow:
+        0 15px 40px rgba(201,169,110,.15);
 }
 
 .btn-outline{
     background:transparent;
     color:var(--cream);
+
     border:1px solid #3b3730;
+
     padding:15px 27px;
+
     border-radius:3px;
+
     font-weight:500;
 }
 
 .btn-outline:hover{
     border-color:var(--gold);
     color:var(--gold-light);
+
     transform:translateY(-3px);
 }
 
-/* =========================
+/* =========================================================
    OPENING
-========================= */
+========================================================= */
 
 .opening-symbol{
     width:95px;
     height:95px;
+
     border:1px solid var(--line);
     border-radius:50%;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     margin:0 auto 32px;
+
     position:relative;
 }
 
 .opening-symbol::before{
     content:"";
+
     position:absolute;
     inset:7px;
+
     border:1px solid rgba(201,169,110,.12);
+
     border-radius:50%;
 }
 
@@ -290,37 +340,46 @@ button{
 .opening-line{
     width:1px;
     height:70px;
+
     background:linear-gradient(
         to bottom,
         transparent,
         var(--gold),
         transparent
     );
+
     margin:28px auto;
 }
 
-/* =========================
+/* =========================================================
    CARD
-========================= */
+========================================================= */
 
 .card{
     max-width:720px;
+
     margin:auto;
+
     padding:55px 35px;
+
     border:1px solid #29251f;
+
     background:
         linear-gradient(
             145deg,
             rgba(255,255,255,.025),
             rgba(255,255,255,.005)
         );
+
     position:relative;
 }
 
 .card::before,
 .card::after{
     content:"";
+
     position:absolute;
+
     width:28px;
     height:28px;
 }
@@ -328,6 +387,7 @@ button{
 .card::before{
     top:-1px;
     left:-1px;
+
     border-top:1px solid var(--gold);
     border-left:1px solid var(--gold);
 }
@@ -335,43 +395,105 @@ button{
 .card::after{
     bottom:-1px;
     right:-1px;
+
     border-bottom:1px solid var(--gold);
     border-right:1px solid var(--gold);
 }
 
-/* =========================
+/* =========================================================
    QUESTION
-========================= */
+========================================================= */
 
 .question-mark{
     font-family:"Cormorant Garamond",serif;
     color:var(--gold);
+
     font-size:55px;
+
     margin-bottom:20px;
 }
 
 .small-note{
     font-size:11px;
     color:#625e57;
+
     letter-spacing:2px;
+
     margin-top:25px;
 }
 
-/* =========================
+/* =========================================================
+   QUESTION BUTTON AREA
+========================================================= */
+
+#screen2 .buttons{
+    position:relative;
+
+    min-height:90px;
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:14px;
+}
+
+/* YES BUTTON */
+
+#screen2 .btn-main{
+    position:relative;
+
+    z-index:10;
+
+    transform-origin:center center;
+
+    min-width:130px;
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        padding .3s ease,
+        box-shadow .3s ease;
+}
+
+/* NOT SURE BUTTON */
+
+#screen2 .btn-outline{
+    position:relative;
+
+    z-index:50;
+
+    min-width:130px;
+
+    background:rgba(8,7,6,.96);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+/* =========================================================
    TERMINAL / MEMORY LOG
-========================= */
+========================================================= */
 
 .log{
     max-width:650px;
+
     margin:35px auto;
+
     background:#0b0a09;
+
     border:1px solid #29251f;
+
     text-align:left;
 }
 
 .log-head{
     padding:12px 16px;
+
     border-bottom:1px solid #24211c;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -380,23 +502,33 @@ button{
 .log-title{
     font-family:monospace;
     font-size:10px;
+
     color:#706b62;
+
     letter-spacing:1px;
 }
 
 .log-dot{
     width:7px;
     height:7px;
+
     background:var(--gold);
+
     border-radius:50%;
-    box-shadow:0 0 12px rgba(201,169,110,.5);
+
+    box-shadow:
+        0 0 12px rgba(201,169,110,.5);
 }
 
 .log-body{
     padding:23px;
+
     font-family:"Courier New",monospace;
+
     font-size:12px;
+
     line-height:2.2;
+
     color:#878176;
 }
 
@@ -404,23 +536,28 @@ button{
     color:var(--gold-light);
 }
 
-/* =========================
+/* =========================================================
    ENVELOPE
-========================= */
+========================================================= */
 
 .envelope-area{
     height:300px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     margin:15px 0 20px;
 }
 
 .envelope{
     width:min(440px,90vw);
     height:260px;
+
     position:relative;
+
     cursor:pointer;
+
     transition:.4s ease;
 }
 
@@ -430,25 +567,39 @@ button{
 
 .envelope-back{
     position:absolute;
+
     inset:20px 0 0;
+
     background:#181510;
+
     border:1px solid #4b402e;
 }
 
 .envelope-paper{
     position:absolute;
+
     left:8%;
     right:8%;
     bottom:5%;
+
     height:82%;
+
     background:#f3eee4;
     color:#211e18;
+
     transform:translateY(18%);
-    transition:.9s cubic-bezier(.2,.8,.2,1);
+
+    transition:
+        .9s cubic-bezier(.2,.8,.2,1);
+
     padding:25px;
+
     text-align:left;
+
     z-index:2;
-    box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.3);
 }
 
 .envelope.open .envelope-paper{
@@ -462,31 +613,59 @@ button{
 
 .paper-small{
     margin-top:8px;
+
     font-size:9px;
+
     color:#777;
+
     letter-spacing:2px;
 }
 
 .envelope-front{
     position:absolute;
+
     inset:20px 0 0;
+
     background:#211d17;
+
     border:1px solid #594b35;
+
     z-index:4;
-    clip-path:polygon(0 0,50% 48%,100% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 48%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
 }
 
 .envelope-flap{
     position:absolute;
+
     left:0;
     right:0;
     top:20px;
+
     height:130px;
+
     background:#292319;
+
     border:1px solid #594b35;
-    clip-path:polygon(0 0,50% 100%,100% 0);
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 100%,
+            100% 0
+        );
+
     transform-origin:top;
+
     transition:.8s ease;
+
     z-index:5;
 }
 
@@ -497,39 +676,58 @@ button{
 
 .seal{
     position:absolute;
+
     width:46px;
     height:46px;
+
     border-radius:50%;
+
     background:var(--gold);
+
     color:#15110a;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     left:50%;
     top:125px;
+
     transform:translateX(-50%);
+
     z-index:6;
+
     font-family:"Cormorant Garamond",serif;
+
     font-size:20px;
 }
 
-/* =========================
+/* =========================================================
    LETTER
-========================= */
+========================================================= */
 
 .letter{
     max-width:760px;
+
     margin:0 auto;
+
     background:#f1ece2;
     color:#25211b;
+
     text-align:left;
+
     padding:55px clamp(25px,7vw,70px);
+
     position:relative;
-    box-shadow:0 35px 90px rgba(0,0,0,.45);
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.45);
+
     animation:letterIn 1s ease;
 }
 
 @keyframes letterIn{
+
     from{
         opacity:0;
         transform:scale(.96) translateY(25px);
@@ -539,70 +737,100 @@ button{
         opacity:1;
         transform:scale(1) translateY(0);
     }
+
 }
 
 .letter::before{
     content:"";
+
     position:absolute;
+
     inset:12px;
+
     border:1px solid rgba(60,50,35,.12);
 }
 
 .letter-top{
     display:flex;
+
     justify-content:space-between;
+
     gap:15px;
+
     border-bottom:1px solid #d3cbbb;
+
     padding-bottom:18px;
+
     margin-bottom:30px;
+
     font-size:9px;
+
     letter-spacing:2px;
+
     color:#827a6d;
+
     text-transform:uppercase;
 }
 
 .letter h3{
     font-family:"Cormorant Garamond",serif;
+
     font-size:30px;
+
     font-weight:600;
+
     margin-bottom:25px;
 }
 
 .letter p{
     font-family:"Cormorant Garamond",serif;
+
     font-size:20px;
+
     line-height:1.65;
+
     margin-bottom:18px;
 }
 
 .letter-sign{
     margin-top:35px;
+
     padding-top:22px;
+
     border-top:1px solid #d3cbbb;
+
     font-family:"Cormorant Garamond",serif;
+
     font-size:18px;
 }
 
 .letter-sign strong{
     display:block;
+
     font-size:25px;
+
     margin-top:5px;
 }
 
-/* =========================
+/* =========================================================
    TIMELINE
-========================= */
+========================================================= */
 
 .timeline{
     max-width:650px;
+
     margin:45px auto;
+
     text-align:left;
 }
 
 .timeline-item{
     padding:0 0 40px 35px;
+
     margin-left:8px;
+
     border-left:1px solid #383329;
+
     position:relative;
 }
 
@@ -612,118 +840,169 @@ button{
 
 .timeline-item::before{
     content:"";
+
     position:absolute;
+
     left:-5px;
     top:2px;
+
     width:9px;
     height:9px;
+
     border-radius:50%;
+
     background:var(--gold);
-    box-shadow:0 0 15px rgba(201,169,110,.25);
+
+    box-shadow:
+        0 0 15px rgba(201,169,110,.25);
 }
 
 .timeline-date{
     color:var(--gold);
+
     font-family:monospace;
+
     font-size:10px;
+
     letter-spacing:2px;
+
     margin-bottom:8px;
 }
 
 .timeline-title{
     font-family:"Cormorant Garamond",serif;
+
     font-size:27px;
+
     margin-bottom:6px;
 }
 
 .timeline-text{
     color:#898278;
+
     line-height:1.8;
+
     font-size:14px;
 }
 
-/* =========================
+/* =========================================================
    FINAL
-========================= */
+========================================================= */
 
 .final-ring{
     width:210px;
     height:210px;
+
     margin:0 auto 35px;
+
     border:1px solid var(--line);
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     position:relative;
 }
 
 .final-ring::before{
     content:"";
+
     position:absolute;
+
     inset:13px;
+
     border:1px solid rgba(201,169,110,.12);
+
     border-radius:50%;
 }
 
 .final-one{
     font-family:"Cormorant Garamond",serif;
+
     font-size:130px;
+
     line-height:1;
+
     color:var(--gold-light);
+
     font-weight:500;
 }
 
 .final-message{
     max-width:620px;
+
     margin:25px auto;
+
     color:#aaa398;
+
     line-height:1.9;
+
     font-size:15px;
 }
 
 .signature-final{
     margin-top:40px;
+
     color:#6f695f;
+
     font-size:10px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
 }
 
 .signature-final span{
     display:block;
+
     color:var(--gold);
+
     margin-top:10px;
 }
 
-/* =========================
+/* =========================================================
    TOAST
-========================= */
+========================================================= */
 
 .toast{
     position:fixed;
+
     left:50%;
     bottom:30px;
+
     transform:translate(-50%,25px);
+
     padding:12px 18px;
+
     background:#17140f;
+
     border:1px solid #4b402e;
+
     color:var(--cream);
+
     font-size:12px;
+
     opacity:0;
+
     pointer-events:none;
+
     transition:.35s ease;
+
     z-index:100;
 }
 
 .toast.show{
     opacity:1;
+
     transform:translate(-50%,0);
 }
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:600px){
 
@@ -760,6 +1039,29 @@ button{
         flex-direction:column;
     }
 
+    /* Keep question buttons usable */
+    #screen2 .buttons{
+        min-height:145px;
+
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+    #screen2 .btn-main,
+    #screen2 .btn-outline{
+        width:100%;
+        max-width:280px;
+    }
+
+    #screen2 .btn-main{
+        transform-origin:center;
+    }
+
+    #screen2 .btn-outline{
+        z-index:50;
+    }
+
     .buttons{
         flex-direction:column;
     }
@@ -772,16 +1074,87 @@ button{
     .envelope-area{
         height:270px;
     }
+
+    .final-ring{
+        width:180px;
+        height:180px;
+    }
+
+    .final-one{
+        font-size:110px;
+    }
+
 }
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
+
+    h1{
+        font-size:50px;
+    }
+
+    h2{
+        font-size:38px;
+    }
+
+    .card{
+        padding:35px 16px;
+    }
+
+    .question-mark{
+        font-size:48px;
+    }
+
+    .letter{
+        padding:35px 20px;
+    }
+
+    .letter p{
+        font-size:17px;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        scroll-behavior:auto !important;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ========================================================
+     BACKGROUND
+========================================================= -->
+
 <div class="background">
+
     <div class="glow one"></div>
+
     <div class="glow two"></div>
+
     <div class="grid"></div>
+
 </div>
 
 <div id="dust"></div>
@@ -789,9 +1162,10 @@ button{
 
 <main>
 
-<!-- ==================================================
+
+<!-- ========================================================
      SCREEN 1 — OPENING
-================================================== -->
+========================================================= -->
 
 <section class="screen active" id="screen1">
 
@@ -824,16 +1198,19 @@ button{
         made with a little time and a lot of thought.
     </p>
 
-    <button class="btn-main" onclick="goTo(2)">
+    <button
+        class="btn-main"
+        onclick="goTo(2)"
+    >
         ENTER →
     </button>
 
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================================
      SCREEN 2 — QUESTION
-================================================== -->
+========================================================= -->
 
 <section class="screen" id="screen2">
 
@@ -843,12 +1220,16 @@ button{
 
     <div class="card">
 
-        <div class="question-mark">?</div>
+        <div class="question-mark">
+            ?
+        </div>
 
         <h2>
             Do you remember
             <br>
-            <span class="gold">19.09.2025?</span>
+            <span class="gold">
+                19.09.2025?
+            </span>
         </h2>
 
         <p class="description">
@@ -859,11 +1240,17 @@ button{
 
         <div class="buttons">
 
-            <button class="btn-main" onclick="yesRemember()">
+            <button
+                class="btn-main"
+                onclick="yesRemember()"
+            >
                 YES, I DO
             </button>
 
-            <button class="btn-outline" onclick="notSure()">
+            <button
+                class="btn-outline"
+                onclick="notSure()"
+            >
                 NOT SURE
             </button>
 
@@ -878,9 +1265,9 @@ button{
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================================
      SCREEN 3 — REVEAL
-================================================== -->
+========================================================= -->
 
 <section class="screen" id="screen3">
 
@@ -891,25 +1278,30 @@ button{
     <div class="log">
 
         <div class="log-head">
+
             <div class="log-title">
                 MEMORY_LOG.TXT
             </div>
 
             <div class="log-dot"></div>
+
         </div>
 
         <div class="log-body">
 
             <div>
-                &gt; Date: <span>19.09.2025</span>
+                &gt; Date:
+                <span>19.09.2025</span>
             </div>
 
             <div>
-                &gt; Place: <span>JITD</span>
+                &gt; Place:
+                <span>JITD</span>
             </div>
 
             <div>
-                &gt; Status: <span>BEGINNING</span>
+                &gt; Status:
+                <span>BEGINNING</span>
             </div>
 
             <div>
@@ -927,7 +1319,9 @@ button{
     <h2>
         And somehow,
         <br>
-        <span class="gold">one year passed.</span>
+        <span class="gold">
+            one year passed.
+        </span>
     </h2>
 
     <p class="description">
@@ -937,16 +1331,19 @@ button{
         debugging and small victories.
     </p>
 
-    <button class="btn-main" onclick="goTo(4)">
+    <button
+        class="btn-main"
+        onclick="goTo(4)"
+    >
         CONTINUE →
     </button>
 
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================================
      SCREEN 4 — ONE YEAR
-================================================== -->
+========================================================= -->
 
 <section class="screen" id="screen4">
 
@@ -959,7 +1356,9 @@ button{
         <h2>
             One year.
             <br>
-            <span class="gold">Already?</span>
+            <span class="gold">
+                Already?
+            </span>
         </h2>
 
         <p class="description">
@@ -970,11 +1369,17 @@ button{
 
         <div class="buttons">
 
-            <button class="btn-main" onclick="goTo(5)">
+            <button
+                class="btn-main"
+                onclick="goTo(5)"
+            >
                 YES ✨
             </button>
 
-            <button class="btn-outline" onclick="noWay()">
+            <button
+                class="btn-outline"
+                onclick="noWay()"
+            >
                 THAT FAST?
             </button>
 
@@ -985,9 +1390,9 @@ button{
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================================
      SCREEN 5 — ENVELOPE
-================================================== -->
+========================================================= -->
 
 <section class="screen" id="screen5">
 
@@ -998,7 +1403,9 @@ button{
     <h2>
         I wrote
         <br>
-        <span class="gold">something.</span>
+        <span class="gold">
+            something.
+        </span>
     </h2>
 
     <p class="description">
@@ -1011,11 +1418,16 @@ button{
 
     <div class="envelope-area">
 
-        <div class="envelope" id="envelope" onclick="openEnvelope()">
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openEnvelope()"
+        >
 
             <div class="envelope-back"></div>
 
             <div class="envelope-paper">
+
                 <div class="paper-title">
                     A Letter
                 </div>
@@ -1023,6 +1435,7 @@ button{
                 <div class="paper-small">
                     FROM A STUDENT
                 </div>
+
             </div>
 
             <div class="envelope-flap"></div>
@@ -1037,16 +1450,19 @@ button{
 
     </div>
 
-    <button class="btn-outline" onclick="openEnvelope()">
+    <button
+        class="btn-outline"
+        onclick="openEnvelope()"
+    >
         OPEN THE LETTER
     </button>
 
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================================
      SCREEN 6 — LETTER
-================================================== -->
+========================================================= -->
 
 <section class="screen" id="screen6">
 
@@ -1057,8 +1473,15 @@ button{
     <div class="letter">
 
         <div class="letter-top">
-            <span>JITD</span>
-            <span>19 / 09 / 2026</span>
+
+            <span>
+                JITD
+            </span>
+
+            <span>
+                19 / 09 / 2026
+            </span>
+
         </div>
 
         <h3>
@@ -1125,25 +1548,37 @@ button{
         </p>
 
         <div class="letter-sign">
+
             With respect and gratitude,
-            <strong>Your Student,</strong>
-            <strong>Maha</strong>
+
+            <strong>
+                Your Student,
+            </strong>
+
+            <strong>
+                Maha
+            </strong>
+
         </div>
 
     </div>
 
-    <br><br>
+    <br>
+    <br>
 
-    <button class="btn-main" onclick="goTo(7)">
+    <button
+        class="btn-main"
+        onclick="goTo(7)"
+    >
         KEEP GOING →
     </button>
 
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================================
      SCREEN 7 — JOURNEY
-================================================== -->
+========================================================= -->
 
 <section class="screen" id="screen7">
 
@@ -1217,16 +1652,19 @@ button{
 
     </div>
 
-    <button class="btn-main" onclick="goTo(8)">
+    <button
+        class="btn-main"
+        onclick="goTo(8)"
+    >
         ONE LAST SCREEN →
     </button>
 
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================================
      SCREEN 8 — FINAL
-================================================== -->
+========================================================= -->
 
 <section class="screen" id="screen8">
 
@@ -1244,7 +1682,9 @@ button{
 
     <h2>
         YEAR
-        <span class="gold">COMPLETE.</span>
+        <span class="gold">
+            COMPLETE.
+        </span>
     </h2>
 
     <p class="final-message">
@@ -1267,37 +1707,56 @@ button{
     </h2>
 
     <p class="final-message">
+
         For the guidance.
         <br>
         For the encouragement.
         <br>
         And for being part of the journey.
+
     </p>
 
     <div class="signature-final">
+
         A small website
-        <span>from your student ✦</span>
+
+        <span>
+            from your student ✦
+        </span>
+
     </div>
 
 </section>
 
+
 </main>
 
 
-<div class="toast" id="toast"></div>
+<!-- ========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
 
 
 <script>
 
-/* =========================
+/* =========================================================
    SCREEN NAVIGATION
-========================= */
+========================================================= */
 
 function goTo(number){
 
-    document.querySelectorAll(".screen").forEach(screen=>{
-        screen.classList.remove("active");
-    });
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+
+            screen.classList.remove("active");
+
+        });
 
     const next =
         document.getElementById("screen" + number);
@@ -1316,24 +1775,30 @@ function goTo(number){
 }
 
 
-/* =========================
+/* =========================================================
    MEMORY YES
-========================= */
+========================================================= */
 
 function yesRemember(){
 
-    showToast("Memory confirmed ✦");
+    showToast(
+        "Memory confirmed ✦"
+    );
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
         goTo(3);
+
     },700);
 
 }
 
 
-/* =========================
+/* =========================================================
    MEMORY NOT SURE
-========================= */
+   YES BUTTON GROWS
+   NOT SURE STAYS CLICKABLE
+========================================================= */
 
 let unsureCount = 0;
 
@@ -1341,60 +1806,149 @@ function notSure(){
 
     const messages = [
 
-        "Think again...",
+        "Think again... 👀",
 
         "19 September 2025...",
 
         "A clue: JITD.",
 
-        "One new chapter began.",
+        "Something started that day...",
 
-        "Okay... one last hint ✦"
+        "You're getting closer... ✦",
+
+        "Maybe the YES button knows something 😌"
 
     ];
 
+    /* Show the current hint */
+
     showToast(
-        messages[Math.min(unsureCount, messages.length-1)]
+        messages[
+            Math.min(
+                unsureCount,
+                messages.length - 1
+            )
+        ]
     );
+
+    /* Increase click counter */
 
     unsureCount++;
 
-    if(unsureCount >= 5){
 
-        setTimeout(()=>{
-            goTo(3);
-        },1200);
+    /* =====================================================
+       FIND BOTH BUTTONS
+    ===================================================== */
+
+    const yesButton =
+        document.querySelector(
+            "#screen2 .btn-main"
+        );
+
+    const noButton =
+        document.querySelector(
+            "#screen2 .btn-outline"
+        );
+
+
+    if(!yesButton || !noButton){
+        return;
+    }
+
+
+    /* =====================================================
+       GROW YES BUTTON
+       
+       1 click  = 1.12
+       2 clicks = 1.24
+       3 clicks = 1.36
+       4 clicks = 1.48
+       5 clicks = 1.60
+       6 clicks = 1.72
+    ===================================================== */
+
+    const growth =
+        Math.min(
+            1 + unsureCount * 0.12,
+            1.72
+        );
+
+
+    yesButton.style.transform =
+        `scale(${growth})`;
+
+
+    /* YES stays behind NOT SURE */
+
+    yesButton.style.zIndex = "10";
+
+
+    /* =====================================================
+       NOT SURE ALWAYS STAYS CLICKABLE
+    ===================================================== */
+
+    noButton.style.position = "relative";
+
+    noButton.style.zIndex = "50";
+
+
+    /*
+       This prevents the growing YES button from
+       blocking the NOT SURE button.
+    */
+
+    noButton.style.pointerEvents = "auto";
+
+
+    /* =====================================================
+       AFTER 6 CLICKS
+    ===================================================== */
+
+    if(unsureCount >= 6){
+
+        yesButton.innerHTML =
+            "YES, I REMEMBER ✦";
+
+        showToast(
+            "Okay... I think you remember now. 😄"
+        );
 
     }
 
 }
 
 
-/* =========================
+/* =========================================================
    ONE YEAR
-========================= */
+========================================================= */
 
 function noWay(){
 
-    showToast("Yes... an entire year. ✦");
+    showToast(
+        "Yes... an entire year. ✦"
+    );
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
         goTo(5);
+
     },1000);
 
 }
 
 
-/* =========================
+/* =========================================================
    ENVELOPE
-========================= */
+========================================================= */
 
 let envelopeOpened = false;
 
 function openEnvelope(){
 
     const envelope =
-        document.getElementById("envelope");
+        document.getElementById(
+            "envelope"
+        );
 
     if(!envelopeOpened){
 
@@ -1402,10 +1956,14 @@ function openEnvelope(){
 
         envelopeOpened = true;
 
-        showToast("Opening your letter...");
+        showToast(
+            "Opening your letter..."
+        );
 
-        setTimeout(()=>{
+        setTimeout(() => {
+
             goTo(6);
+
         },1300);
 
     }else{
@@ -1417,55 +1975,64 @@ function openEnvelope(){
 }
 
 
-/* =========================
+/* =========================================================
    TOAST
-========================= */
+========================================================= */
 
 function showToast(message){
 
     const toast =
-        document.getElementById("toast");
+        document.getElementById(
+            "toast"
+        );
 
     toast.textContent = message;
 
     toast.classList.add("show");
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
         toast.classList.remove("show");
+
     },1900);
 
 }
 
 
-/* =========================
+/* =========================================================
    GOLD DUST
-========================= */
+========================================================= */
 
 function createDust(){
 
     const container =
-        document.getElementById("dust");
+        document.getElementById(
+            "dust"
+        );
 
-    for(let i=0;i<32;i++){
+    for(let i = 0; i < 32; i++){
 
         const particle =
             document.createElement("div");
 
-        particle.className="dust";
+        particle.className =
+            "dust";
 
         particle.style.left =
-            Math.random()*100 + "vw";
+            Math.random() * 100 + "vw";
 
         particle.style.animationDuration =
-            (7 + Math.random()*9) + "s";
+            (7 + Math.random() * 9) + "s";
 
         particle.style.animationDelay =
-            (-Math.random()*12) + "s";
+            (-Math.random() * 12) + "s";
 
         particle.style.opacity =
-            .15 + Math.random()*.35;
+            .15 + Math.random() * .35;
 
-        container.appendChild(particle);
+        container.appendChild(
+            particle
+        );
 
     }
 
@@ -1474,30 +2041,39 @@ function createDust(){
 createDust();
 
 
-/* =========================
+/* =========================================================
    KEYBOARD SUPPORT
-========================= */
+========================================================= */
 
-document.addEventListener("keydown",function(event){
+document.addEventListener(
+    "keydown",
+    function(event){
 
-    if(event.key === "Enter"){
+        if(event.key === "Enter"){
 
-        const active =
-            document.querySelector(".screen.active");
+            const active =
+                document.querySelector(
+                    ".screen.active"
+                );
 
-        const button =
-            active?.querySelector(".btn-main");
+            const button =
+                active?.querySelector(
+                    ".btn-main"
+                );
 
-        if(button){
-            button.click();
+            if(button){
+
+                button.click();
+
+            }
+
         }
 
     }
-
-});
+);
 
 </script>
 
 </body>
+
 </html>
-```
